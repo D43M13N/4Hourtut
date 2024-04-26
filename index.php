@@ -7,4 +7,4 @@ $router = new Router;
 
 require 'routes.php';
 
-require $router->direct('about/culture');
+require $router->direct($uri);
