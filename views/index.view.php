@@ -1,39 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Document</title>
-    <meta charset="UTF-8">
-    <style>
-        header {
-            background: #e3e3e3;
-            padding: 2em;
-            text-align: center;
-        }
-    </style>
+<?php require('partials/head.php'); ?>
 
+<?php foreach ($users as $user) : ?>
 
-</head>
-<body>
-<nav>
-    <ul>
-        <li><a href="about.view.php">About</a></li>
-        <li><a href="contact.view.php">Contact</a></li>
-    </ul>
-</nav>
+<li><?= $user->name; ?></li>
 
-    <h1>
-        Tasks for the day
-    </h1>
-
-<?php foreach ($tasks as $task) : ?>
-    <li>
-        <?php if ($task->completed) : ?>
-            <strike> <?= $task->description; ?> </strike>
-        <?php else: ?>
-        <?= $task->description; ?>
-        <?php endif; ?>
-    </li>
 <?php endforeach; ?>
 
-</body>
-</html>
+
+
+
+
+<h1>Submit Your Name</h1>
+
+<form method="POST" action="/names">
+    <input name="name"type="text">
+    <button type="submit"> Submit </button>
+</form>
+
+
+<?php require('partials/footer.php')?>
